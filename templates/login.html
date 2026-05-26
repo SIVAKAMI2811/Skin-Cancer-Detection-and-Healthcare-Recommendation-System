@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Skin Cancer Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #121633;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 1000px;
+        }
+
+        .left-panel {
+            flex: 1;
+            padding: 50px;
+        }
+
+        .left-panel h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .left-panel h2 {
+            font-size: 24px;
+            color: #00f7ff;
+            margin-bottom: 10px;
+        }
+
+        .left-panel p {
+            color: #aaa;
+            margin-top: 10px;
+        }
+
+        .right-panel {
+            background-color: #1f2547;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 350px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .login-btn {
+            width: 100%;
+            background-color: #00c4cc;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .register-btn {
+            width: 100%;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            color: white;
+            background: transparent;
+            cursor: default;
+        }
+
+        .register-btn i {
+            margin-right: 5px;
+        }
+
+        .register-btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h2>Login</h2>
+            <h1>Skin Cancer Detection</h1>
+            <p>Early Detection, Better Protection!</p>
+        </div>
+        <div class="right-panel">
+            <form method="POST" action="/">
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" placeholder="Enter Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" placeholder="Enter Password" required>
+                </div>
+                <button type="submit" class="login-btn"><i class="fas fa-sign-in-alt"></i> Login</button>
+                <button type="button" class="register-btn" disabled><i class="fas fa-user-plus"></i> Register
+                    Account</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

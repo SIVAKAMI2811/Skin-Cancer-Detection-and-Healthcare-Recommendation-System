@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dataset Visualizations</title>
+    <style>
+        body {
+            background-color: #0D0C1D;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+        }
+        img {
+            max-width: 90%;
+            margin: 20px auto;
+            border-radius: 10px;
+            border: 2px solid #00D1FF;
+        }
+        a {
+            color: #00D1FF;
+            text-decoration: none;
+            border: 1px solid #00D1FF;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        a:hover {
+            background-color: #00D1FF;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>📊 Dataset Visualizations</h1>
+    <p>Insights from the HAM10000 Skin Cancer Dataset</p>
+
+    <h2>Distribution of Skin Cancer Types</h2>
+    <img src="data:image/png;base64,{{ chart1 }}" alt="Pie Chart">
+
+    <h2>Count of Each Skin Cancer Type</h2>
+    <img src="data:image/png;base64,{{ chart2 }}" alt="Bar Chart">
+
+    <br><br>
+    <a href="{{ url_for('index') }}">← Back to Home</a>
+</body>
+</html>

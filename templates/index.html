@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skin Cancer Detection</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0c0c2c;
+      color: #fff;
+    }
+
+    header {
+      background-color: #0e1a2b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    nav a {
+      color: #00d9ff;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+
+    .logout-btn {
+      background-color: #f44336;
+      border: none;
+      padding: 0.5rem 1rem;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero h1 {
+      color: #00d9ff;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 1rem auto;
+    }
+
+    .hero img {
+      margin-top: 1rem;
+      max-width: 300px;
+      border-radius: 10px;
+    }
+
+    .button {
+      background-color: #00d9ff;
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background-color: #1a1a3c;
+      border-radius: 10px;
+      padding: 1.5rem;
+      width: 250px;
+    }
+
+    .feature-card i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      /* ✅ so it works well on smaller screens */
+      padding: 2rem;
+    }
+
+    .hero-text {
+      flex: 1;
+      text-align: left;
+      /* ✅ shifts text left */
+      max-width: 50%;
+      /* ✅ prevent stretching too wide */
+    }
+
+    .hero-image {
+      flex: 1;
+      text-align: right;
+      /* ✅ shifts image right */
+    }
+
+    .hero-image img {
+      max-width: 350px;
+      /* ✅ adjust size */
+      border-radius: 10px;
+    }
+
+    .how-it-works {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .step {
+      width: 200px;
+      margin-bottom: 2rem;
+    }
+
+    .step i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #00d9ff;
+    }
+
+    form {
+      background-color: #1a1a3c;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    form input,
+    form select {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 1rem;
+    }
+
+    footer {
+      padding: 1rem;
+      background-color: #0e1a2b;
+      text-align: center;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div><strong style="color:#00d9ff;">Skin Cancer Detection</strong></div>
+    <nav>
+      <a href="#">About</a>
+      <a href="#">Features</a>
+      <a href="#">How It Works</a>
+      <a href="#">Contact</a>
+      <button class="logout-btn">Logout</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Skin Cancer Detection</h1>
+        <p>Early Detection, Better Protection</p>
+        <p>Advanced AI-powered skin cancer detection system for early diagnosis and prevention.</p>
+        <button class="button"
+          onclick="document.getElementById('diagnosisForm').scrollIntoView({ behavior: 'smooth' });">
+          Get Started
+        </button>
+
+
+      </div>
+
+      <div class="hero-image">
+        <img src="{{ url_for('static', filename='images/lesion_types.png') }}" alt="Lesion Types" width="410"
+          height="250" />
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <h2>About Our Service</h2>
+    <div class="features">
+      <div class="feature-card">
+        <i class="fas fa-robot"></i>
+        <h3>AI Analysis</h3>
+        <p>Advanced ML for accurate skin condition analysis.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-user-md"></i>
+        <h3>Expert Doctors</h3>
+        <p>Connect with dermatologists and oncologists.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-clock"></i>
+        <h3>Quick Results</h3>
+        <p>Instant results with doctor follow-up.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>How It Works</h2>
+    <div class="how-it-works">
+      <div class="step">
+        <i class="fas fa-camera"></i>
+        <p><strong>1. Upload Image</strong><br /> Take a clear photo of the skin area.</p>
+      </div>
+      <div class="step">
+        <i class="fas fa-brain"></i>
+        <p><strong>2. AI Analysis</strong><br /> AI analyzes for potential skin conditions.</p>
+      </div>
+      <div class="step">
+        <i class="fas fa-file-medical"></i>
+        <p><strong>3. Get Results</strong><br /> Receive detailed analysis and risk.</p>
+      </div>
+      <div class="step">
+        <i class="fas fa-user-nurse"></i>
+        <p><strong>4. Consultation</strong><br /> Connect with specialists.</p>
+      </div>
+    </div>
+  </section>
+
+  <form id="diagnosisForm" method="POST" action="/index" enctype="multipart/form-data">
+    <h2>Upload & Diagnose</h2>
+    <input type="text" placeholder="Full Name" required />
+    <input type="number" placeholder="Age" required />
+    <select required>
+      <option value="">Select Gender</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+    <select required>
+      <option value="">Select City</option>
+      <option>City A</option>
+      <option>City B</option>
+    </select>
+
+    <!-- ✅ This is the key input -->
+    <input type="file" name="image" accept="image/*" required />
+
+    <p style="font-size:0.9rem;">Please upload a clear, well-lit image of the affected area.</p>
+    <button class="button" type="submit">Upload & Diagnose</button>
+  </form>
+
+
+  <section class="stats">
+    <div class="stat">
+      <h2>96%</h2>
+      <p>Accuracy Rate</p>
+    </div>
+    <div class="stat">
+      <h2>10K+</h2>
+      <p>Successful Diagnoses</p>
+    </div>
+    <div class="stat">
+      <h2>50+</h2>
+      <p>Expert Doctors</p>
+    </div>
+    <div class="stat">
+      <h2>25+</h2>
+      <p>Cities Covered</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Contact us | support@skindetect.ai</p>
+  </footer>
+
+</body>
+
+</html>
