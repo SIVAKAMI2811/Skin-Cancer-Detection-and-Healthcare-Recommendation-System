@@ -1,4 +1,4 @@
-<img width="1345" height="598" alt="image" src="https://github.com/user-attachments/assets/2a3e698b-700f-40b0-850a-0587ed450539" /># Skin-Cancer-Detection-and-Healthcare-Recommendation-System
+# Skin-Cancer-Detection-and-Healthcare-Recommendation-System
 An AI-powered web application that analyzes skin lesion images and predicts potential skin cancer types using deep learning techniques. The system provides image-based classification, prediction confidence visualization, and healthcare recommendations through an interactive Flask-based interface.
 ## Dataset
 The HAM10000 dataset used for training this skin cancer detection model is hosted on Kaggle because the raw image dataset size exceeds GitHub's upload limits.
